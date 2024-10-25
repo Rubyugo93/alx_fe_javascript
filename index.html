@@ -4,32 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Quote Generator</title>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dynamic Quote Generator</title>
-    </head>
-    <body>
-        <h1>Dynamic Quote Generator</h1>
-        
-        <!-- Display random quotes -->
-        <div id="quoteDisplay"></div>
-        <button id="newQuote">Show New Quote</button>
-        
-        <!-- Form to add new quotes -->
-        <div>
-            <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
-            <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
-            <button id="addQuoteBtn">Add Quote</button>
-        </div>
-        
-        <!-- JSON import/export buttons -->
-        <input type="file" id="importFile" accept=".json" />
-        <button id="exportBtn">Export Quotes to JSON</button>
-    
-        <script src="script.js"></script>
-    </body>
-    </html>
+    <style>
+        /* Basic styles for better presentation */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #quoteDisplay {
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            min-height: 50px;
+            font-style: italic;
+        }
+        button {
+            cursor: pointer;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            margin-top: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .notification {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+        #notificationArea {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 300px;
+        }
+        /* Style for file input to match buttons */
+        #importFile {
+            display: inline-block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Quote Generator</h1>
+
+    <!-- Category Filter -->
+    <label for="categoryFilter">Filter by category:</label>
+    <select id="categoryFilter" aria-label="Select category to filter quotes">
+        <option value="all">All Categories</option>
+        <!-- Dynamically populated categories -->
+    </select>
+
+    <!-- Quote Display Section -->
+    <div id="quoteDisplay" role="region" aria-live="polite">
+        <p>No quotes available. Please add some!</p>
+    </div>
+    <button id="newQuote" aria-label="Show a random quote">Show New Quote</button>
+
+    <!-- Form for adding a new quote -->
+    <div>
+        <input id="newQuoteText" type="text" placeholder="Enter a new quote" aria-label="New quote text" />
+        <input id="newQuoteCategory" type="text" placeholder="Enter quote category" aria-label="New quote category" />
+        <button id="addQuoteBtn">Add Quote</button>
+    </div>
+
+    <!-- Export and Import buttons -->
+    <button id="exportBtn">Export Quotes to JSON</button>
+    <label for="importFile" style="display: block; margin-top: 10px;">Import Quotes (JSON file):</label>
+    <input type="file" id="importFile" accept=".json" aria-label="Import quotes from JSON file" />
+
+    <!-- Notification Area -->
+    <div id="notificationArea" aria-live="assertive" aria-relevant="additions text"></div>
+
+    <!-- Include the JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
+
     
