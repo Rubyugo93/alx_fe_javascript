@@ -257,4 +257,6 @@ window.onload = function() {
 document.getElementById('addQuoteBtn').addEventListener('click', addQuote);
 document.getElementById('newQuote').addEventListener('click', showRandomQuote);
 document.getElementById('exportBtn').addEventListener('click', exportToJsonFile);
-document.getElementById('importFile').addEventListener('change', importFrom
+document.getElementById('importFile').addEventListener('change', importFromJsonFile);
+document.getElementById('categoryFilter').addEventListener('change', filterQuotes);
+
