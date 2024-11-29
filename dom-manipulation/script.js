@@ -222,7 +222,7 @@ function resolveConflicts(serverQuotes) {
     saveQuotes();
     populateCategories();
     filterQuotes();
-    notifyUser('Data synced with server and conflicts resolved.');
+    notifyUser('Quotes synced with server!');
   }
 }
 
@@ -254,5 +254,3 @@ document.getElementById('newQuote').addEventListener('click', showRandomQuote);
 document.getElementById('exportBtn').addEventListener('click', exportToJsonFile);
 document.getElementById('importFileInput').addEventListener('change', importFromJsonFile);
 document.getElementById('categoryFilter').addEventListener('change', filterQuotes);
-
-    
