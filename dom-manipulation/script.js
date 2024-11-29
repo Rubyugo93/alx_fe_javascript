@@ -246,6 +246,7 @@ window.onload = function() {
   populateCategories();
   loadSelectedCategory();
   syncQuotes();
+  setInterval(showRandomQuote, 10000); // Show a new random quote every 10 seconds
 };
 
 document.getElementById('addQuoteBtn').addEventListener('click', addQuote);
@@ -253,3 +254,5 @@ document.getElementById('newQuote').addEventListener('click', showRandomQuote);
 document.getElementById('exportBtn').addEventListener('click', exportToJsonFile);
 document.getElementById('importFileInput').addEventListener('change', importFromJsonFile);
 document.getElementById('categoryFilter').addEventListener('change', filterQuotes);
+
+    
